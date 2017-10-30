@@ -69,7 +69,7 @@ export default class Tab extends React.Component {
         <TouchableNativeFeedback
           testID={this.props.testID}
           background = {
-            (Platform.Version >= 21) ?
+            (Platform.Version < 21) ?
               TouchableNativeFeedback.Ripple(undefined, true)
             :
               TouchableNativeFeedback.SelectableBackground()
