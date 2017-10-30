@@ -68,7 +68,12 @@ export default class Tab extends React.Component {
       return (
         <TouchableNativeFeedback
           testID={this.props.testID}
-          background={TouchableNativeFeedback.Ripple(undefined, true)}
+          background = {
+            (Platform.Version >= 21) ?
+              TouchableNativeFeedback.Ripple(undefined, true)
+            :
+              TouchableNativeFeedback.SelectableBackground()
+          }
           onPress={this._handlePress}>
           <View style={tabStyle}>
             <View>
